@@ -98,7 +98,7 @@ class Client(object):
                         try:
                             filedata = bytes.fromhex(data["binary"])
                             filename = data["filename"].strip()
-                            if [c for c in filename if c in "\\/:;!@#$%^&*()-=_+"] or len(filename) > 32:
+                            if [c for c in filename if c in "\\/:;!@#$%^&*=+"] or len(filename) > 32:
                                 self.sock.sendjson(self.make_resp("e.invalid", {"error": "Invalid filename."}))
                                 continue
 

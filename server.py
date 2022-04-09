@@ -45,7 +45,7 @@ class Server(object):
 
         # Handle history
         if len(self.history) == 50:
-            self.history = self.history[1:] = [data]
+            self.history = self.history[1:] + [data]
 
         else:
             self.history.append(data)
